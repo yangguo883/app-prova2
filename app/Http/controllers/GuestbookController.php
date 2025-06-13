@@ -17,10 +17,10 @@ class GuestbookController extends Controller
     public function addMessage(Request $request)
     {
         $request->validate([
-            'message' => 'required|string|max:10',
+            'message' => 'required|string|max:25',
         ]);
 
-        $userId = Auth::id(); // ID dell'utente loggato
+        $userId = Auth::id(); 
 
         Message::create([
             'message' => $request->input('message'),
